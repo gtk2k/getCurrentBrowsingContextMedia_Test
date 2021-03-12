@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="origin-trial" content="AqnZ0WGHBWOjFX35b0no5ZPWCCutR65B2svHwzOqdXbCjTv++Sibq7dsnBGxf5YnhUQawYNl+C8nOUB+hVj0hAwAAAB6eyJvcmlnaW4iOiJodHRwczovL2d0azJrLmdpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiR2V0Q3VycmVudEJyb3dzaW5nQ29udGV4dE1lZGlhIiwiZXhwaXJ5IjoxNjI5ODQ5NTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
     <title>getCurrentBrowsingContextMedia Test</title>
     <style>
         html, body {
@@ -23,13 +24,15 @@
     </style>
 </head>
 <body>
+    <button id="btn">getCurrentBrowsingContextMedia()</button>
     <video id="preview"></video>
+    
     <script>
-        (async _ => {
+        btn.onclick = async evt => {
             const stream = await navigator.mediaDevices.getCurrentBrowsingContextMedia();
             preview.srcObject = stream;
             preview.play();
-        })();
+        };
     </script>
 </body>
 </html>
